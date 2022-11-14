@@ -10,21 +10,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 nextMovement;
     private float xAxis,zAxis;
     
-    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         nextMovement = Vector3.zero;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        nextMovement.x = Input.GetAxis("Horizontal");
-        nextMovement.z = Input.GetAxis("Vertical");
+        zAxis = Input.GetAxis("Vertical");
     }
     private void FixedUpdate()
     {
-        rb.AddForce(nextMovement * speed, ForceMode.Acceleration);
+        rb.AddForce(transform.forward * zAxis * speed, ForceMode.Acceleration);
     }
 }
