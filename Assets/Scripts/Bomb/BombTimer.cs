@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BombTimer : MonoBehaviour
 {
+    public delegate void onTimerOut();
+    public static event onTimerOut OnTimerOut;
     public const float TIME = 20;
     private float currentTime;
-    private bool hasPressedAKey = false;
+    private bool hasPressedAKey = false, hasExploded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,12 @@ public class BombTimer : MonoBehaviour
         if(hasPressedAKey && currentTime > 0)
         {
             currentTime -= Time.deltaTime;
-            Debug.Log(currentTime);
+        }
+
+        if(currentTime <= 0 && !hasExploded)
+        {
+            hasExploded = true;
+            OnTimerOut?.Invoke();
         }
 
     }
