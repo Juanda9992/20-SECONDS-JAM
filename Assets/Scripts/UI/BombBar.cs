@@ -9,7 +9,7 @@ public class BombBar : MonoBehaviour
     {
         if(status == Game_State.GameStatus.playing)
         {
-            transform.DOScaleX(0,20);
+            transform.DOScale(Vector3.up,19);
         }
     }
 

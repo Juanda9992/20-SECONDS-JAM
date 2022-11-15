@@ -5,6 +5,8 @@ using UnityEngine;
 public class BombExplosion : MonoBehaviour
 {
     public float explosionRange;
+    public float explosionForce;
+    public float upwardsModifier;
 
     [SerializeField] private LayerMask destructiblesLayer;
     private void Explode()
@@ -15,8 +17,16 @@ public class BombExplosion : MonoBehaviour
         {
             if(destructible.TryGetComponent<DamageableObject>(out DamageableObject damageObj))
             {
-                Debug.Log(damageObj.name);
+                damageObj.rb.AddExplosionForce(explosionForce,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
             }
+        }
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Explode();
         }
     }
 
