@@ -7,7 +7,7 @@ public class Game_State : MonoBehaviour
 {
     public static Game_State Game_State_Instance;
 
-    public enum GameStatus{idle,playing,finished}
+    public enum GameStatus{idle,playing,calculating,finished}
 
     public GameStatus status = GameStatus.idle;
 
@@ -26,7 +26,7 @@ public class Game_State : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(status == GameStatus.idle && Input.anyKeyDown)
         {
