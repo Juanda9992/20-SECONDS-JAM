@@ -43,4 +43,9 @@ public class BombTimer : MonoBehaviour
     {
         Game_State.Game_State_Instance.onStatusChanged += ReadGameStatus;
     }
+    private void OnDisable()
+    {
+
+        Game_State.Game_State_Instance.onStatusChanged -= ReadGameStatus;
+    }
 }

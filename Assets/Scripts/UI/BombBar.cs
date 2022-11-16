@@ -15,7 +15,12 @@ public class BombBar : MonoBehaviour
 
     private void OnEnable()
     {
-        Game_State.Game_State_Instance.onStatusChanged = StartShrinkingBar;
+        Game_State.Game_State_Instance.onStatusChanged += StartShrinkingBar;
+    }
+
+    private void OnDisable()
+    {
+        Game_State.Game_State_Instance.onStatusChanged -= StartShrinkingBar;
     }
 
 }

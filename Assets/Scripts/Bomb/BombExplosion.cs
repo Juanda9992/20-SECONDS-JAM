@@ -7,8 +7,13 @@ public class BombExplosion : MonoBehaviour
     public float explosionRange;
     public float explosionForce;
     public float upwardsModifier;
-
     [SerializeField] private LayerMask destructiblesLayer;
+    private ObjectsDamagedList damagedList;
+
+    private void Start()
+    {
+        damagedList = GameObject.FindObjectOfType<ObjectsDamagedList>();
+    }
     private void Explode()
     {
         Collider[] explosionColiders = Physics.OverlapSphere(transform.position,explosionRange,destructiblesLayer);
@@ -17,9 +22,11 @@ public class BombExplosion : MonoBehaviour
         {
             if(destructible.TryGetComponent<DamageableObject>(out DamageableObject damageObj))
             {
+                damagedList.AddObjectsToList(damageObj);
                 damageObj.rb.AddExplosionForce(explosionForce,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
             }
         }
+        damagedList.StartSendingObjects();
     }
 
     void Update()
