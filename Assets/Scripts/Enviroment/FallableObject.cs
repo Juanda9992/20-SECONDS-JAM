@@ -8,15 +8,6 @@ public class FallableObject : DamageableObject
     public int fallValue;
     [SerializeField] private float minVelocity;
     private bool damageTaken = false;
-
-    private ListDisplayer displayer;
-
-
-    private void Start() 
-    {
-        displayer = GameObject.FindObjectOfType<ListDisplayer>();    
-    }
-
     private void Update() 
     {
         if(!damageTaken)
@@ -27,8 +18,7 @@ public class FallableObject : DamageableObject
             }
             if(rb.angularVelocity.magnitude == 0 && canTakeDamage)
             {
-                value += fallValue;
-                displayer.ShowObjectsDamaged(this);
+                Displayer.AddPenaltyScore(fallValue);
                 damageTaken = true;
             }    
         }

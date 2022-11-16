@@ -14,4 +14,10 @@ public class ListDisplayer : MonoBehaviour
         Debug.LogFormat("{0}, {1}", objectToShow.Name,objectToShow.value);
         calculator.AddScore(objectToShow.value);
     }
+
+    public void AddPenaltyScore(int scoreToAdd)
+    {
+        Debug.LogFormat("Penalty of {0}",scoreToAdd);
+        calculator.AddScore(scoreToAdd);
+    }
 }
