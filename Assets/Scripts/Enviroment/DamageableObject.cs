@@ -5,6 +5,8 @@ using UnityEngine;
 public class DamageableObject : MonoBehaviour
 {
     public Rigidbody rb;
+    public string Name;
+    public int value;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

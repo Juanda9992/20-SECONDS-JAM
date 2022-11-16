@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class ListDisplayer : MonoBehaviour
 {
+    private ScoreCalculator calculator;
+    private void Start()
+    {
+        calculator = GameObject.FindObjectOfType<ScoreCalculator>();
+    }
     public void ShowObjectsDamaged(DamageableObject objectToShow)
     {
-        Debug.Log(objectToShow.name);
+        Debug.LogFormat("{0}, {1}", objectToShow.Name,objectToShow.value);
+        calculator.AddScore(objectToShow.value);
     }
 }
