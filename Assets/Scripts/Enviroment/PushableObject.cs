@@ -6,12 +6,17 @@ public class PushableObject : DamageableObject
 {
     public int pushValue;
 
+    private void Start() 
+    {
+        damageType = DamageType.push;    
+    }
 
     private void OnCollisionEnter(Collision other) 
     {
         if(other.transform.CompareTag("Player"))
         {
-            Displayer.AddPenaltyScore(pushValue);
+            Displayer.AddPenaltyScore(this);
+            damageType = DamageType.push;
         }    
     }
 }

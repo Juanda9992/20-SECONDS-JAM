@@ -159,7 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   Name: Box
-  value: 0
+  value: 200
+  damageType: 0
   pushValue: 20
 --- !u!54 &88846221
 Rigidbody:
@@ -192,6 +193,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 200
+  damageType: 0
 --- !u!65 &88846223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -322,6 +324,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &125308091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -549,6 +552,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &396261848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -627,6 +631,87 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &534472099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534472100}
+  - component: {fileID: 534472102}
+  - component: {fileID: 534472101}
+  m_Layer: 5
+  m_Name: Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &534472100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534472099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 912261160}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 750}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &534472101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534472099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8927116192e9b0542aa842aeb7f3509b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxItemsInScreen: 5
+  objectPrefab: {fileID: 3968521877023295382, guid: 298bcbcf6a157aa4db0c1a786079063f, type: 3}
+  explosionColor: {r: 1, g: 0, b: 0, a: 1}
+  fallColor: {r: 1, g: 0.532876, b: 0, a: 1}
+  pushColor: {r: 1, g: 0.81834996, b: 0, a: 1}
+--- !u!114 &534472102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534472099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 50
+    m_Top: 0
+    m_Bottom: 30
+  m_ChildAlignment: 8
+  m_Spacing: 40
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1236,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1168,6 +1253,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1308888184}
+  - {fileID: 534472100}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1422,6 +1508,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &1198815469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1626,6 +1713,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Pillar
   value: 0
+  damageType: 0
   canTakeDamage: 0
   fallValue: 50
   minVelocity: 2
@@ -1660,6 +1748,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Pilar
   value: 200
+  damageType: 0
 --- !u!65 &1393416001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1731,7 +1820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393415997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 2.62, z: 4.54}
+  m_LocalPosition: {x: -0.36, y: 6.85, z: 6.17}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1790,6 +1879,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &1500591200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2089,6 +2179,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &1934228609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2203,6 +2294,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 250
+  damageType: 0
 --- !u!65 &2116164192
 BoxCollider:
   m_ObjectHideFlags: 0

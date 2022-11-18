@@ -8,6 +8,11 @@ public class FallableObject : DamageableObject
     public int fallValue;
     [SerializeField] private float minVelocity;
     private bool damageTaken = false;
+
+    private void Start() 
+    {
+        damageType = DamageType.fall;    
+    }
     private void Update() 
     {
         if(!damageTaken)
@@ -18,7 +23,8 @@ public class FallableObject : DamageableObject
             }
             if(rb.angularVelocity.magnitude == 0 && canTakeDamage)
             {
-                Displayer.AddPenaltyScore(fallValue);
+                damageType = DamageType.fall;
+                Displayer.AddPenaltyScore(this);
                 damageTaken = true;
             }    
         }
