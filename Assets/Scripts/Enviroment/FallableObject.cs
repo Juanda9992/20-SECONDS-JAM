@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallableObject : DamageableObject
 {
     public bool canTakeDamage = false;
-    public int fallValue;
+    public int fallValue,pushValue;
     [SerializeField] private float minVelocity;
     private bool damageTaken = false;
 
@@ -28,6 +28,16 @@ public class FallableObject : DamageableObject
                 damageTaken = true;
             }    
         }
+    }
+
+    
+    private void OnCollisionEnter(Collision other) 
+    {
+        if(other.transform.CompareTag("Player"))
+        {
+            damageType = DamageType.push;
+            Displayer.AddPenaltyScore(this);
+        }    
     }
     
 
