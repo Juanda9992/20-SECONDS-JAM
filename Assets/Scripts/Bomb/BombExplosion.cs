@@ -30,14 +30,6 @@ public class BombExplosion : MonoBehaviour
         damagedList.StartSendingObjects();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Explode();
-        }
-    }
-
     private void OnEnable()
     {
         BombTimer.OnTimerOut += Explode;

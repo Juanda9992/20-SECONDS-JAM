@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 88846225}
   - component: {fileID: 88846224}
   - component: {fileID: 88846223}
-  - component: {fileID: 88846222}
   - component: {fileID: 88846221}
   - component: {fileID: 88846220}
   m_Layer: 6
@@ -160,7 +159,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   Name: Box
   value: 200
-  damageType: 0
+  damageType: 2
   pushValue: 20
 --- !u!54 &88846221
 Rigidbody:
@@ -178,22 +177,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &88846222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88846219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bca34cff8e1b604a869b78311f3fad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  Name: Box
-  value: 200
-  damageType: 0
 --- !u!65 &88846223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1688,7 +1671,6 @@ GameObject:
   - component: {fileID: 1393416003}
   - component: {fileID: 1393416002}
   - component: {fileID: 1393416001}
-  - component: {fileID: 1393416000}
   - component: {fileID: 1393415999}
   - component: {fileID: 1393415998}
   m_Layer: 6
@@ -1712,7 +1694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   Name: Pillar
-  value: 0
+  value: 200
   damageType: 0
   canTakeDamage: 0
   fallValue: 50
@@ -1733,22 +1715,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1393416000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393415997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bca34cff8e1b604a869b78311f3fad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  Name: Pilar
-  value: 200
-  damageType: 0
 --- !u!65 &1393416001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1820,7 +1786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393415997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 6.85, z: 6.17}
+  m_LocalPosition: {x: -0.36, y: 2.99, z: 6.17}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2067,6 +2033,7 @@ GameObject:
   - component: {fileID: 1832336549}
   - component: {fileID: 1832336547}
   - component: {fileID: 1832336550}
+  - component: {fileID: 1832336551}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -2127,6 +2094,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a2b75c80cbe124c8e433779b5b735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1832336551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832336546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb029f1a8bcb3cc40b48c60140f30a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleToChange: 0.3
+  scaleDuration: 1.2
 --- !u!1 &1934228606
 GameObject:
   m_ObjectHideFlags: 0

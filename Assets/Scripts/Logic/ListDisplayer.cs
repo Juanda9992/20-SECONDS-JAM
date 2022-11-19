@@ -13,14 +13,12 @@ public class ListDisplayer : MonoBehaviour
     }
     public void ShowObjectsDamaged(DamageableObject objectToShow)
     {
-        Debug.LogFormat("{0}, {1}", objectToShow.Name,objectToShow.value);
         calculator.AddScore(objectToShow.value);
         onObjectReceived?.Invoke(objectToShow,objectToShow.value);
     }
 
     public void AddPenaltyScore(DamageableObject objectToAdd)
     {
-        Debug.LogFormat("Penalty of {0}",objectToAdd.value);
         if(objectToAdd.damageType == DamageableObject.DamageType.fall)
         {
             FallableObject fallableObject = objectToAdd.GetComponent<FallableObject>();

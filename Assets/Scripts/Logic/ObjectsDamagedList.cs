@@ -28,7 +28,10 @@ public class ObjectsDamagedList : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(timeBetweenSendObjectsToList);
         while(damagedObjects.Count > 0)
         {
-            displayer.ShowObjectsDamaged(damagedObjects.Dequeue());
+            Debug.LogWarningFormat("sended at {0}",Time.time);
+            DamageableObject currentObject = damagedObjects.Peek();
+            displayer.ShowObjectsDamaged(currentObject);
+            damagedObjects.Dequeue();
             yield return wait;
         }
         yield return new WaitForSeconds(1);
