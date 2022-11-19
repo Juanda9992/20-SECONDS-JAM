@@ -32,7 +32,7 @@ public class ObjectsDamagedList : MonoBehaviour
     }
     private IEnumerator SendObjectsToDisplay()
     {
-        WaitForSeconds wait = new WaitForSeconds(timeBetweenSendObjectsToList);
+        WaitForSeconds wait = new WaitForSeconds(timeBetweenSendObjectsToList);   
         while(damagedObjects.Count > 0)
         {
             Debug.LogWarningFormat("sended at {0}",Time.time);
@@ -41,7 +41,7 @@ public class ObjectsDamagedList : MonoBehaviour
             damagedObjects.Dequeue();
             yield return wait;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.finished);
     }
 

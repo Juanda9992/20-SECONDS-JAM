@@ -46,6 +46,7 @@ public class UIDisplayer : MonoBehaviour
         }
         objectsInScreen.Enqueue(objectToCheck);
     }
+
     private void OnEnable()
     {
         ListDisplayer.onObjectReceived += InstantiateUIElement; 

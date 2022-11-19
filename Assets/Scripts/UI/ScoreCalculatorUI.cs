@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
 public class ScoreCalculatorUI : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject containerObject;
     private ScoreCalculator calculator;
     private void Start()
     {
@@ -16,6 +16,7 @@ public class ScoreCalculatorUI : MonoBehaviour
     public void ShowPanelUI()
     {
         panel.SetActive(true);
+        containerObject.SetActive(false);
         ShowScore();
     }
 
@@ -24,13 +25,14 @@ public class ScoreCalculatorUI : MonoBehaviour
         scoreText.text = "Your Damage: " + calculator.GetScore().ToString();
     }
 
-    private void ReadGameStatus(Game_State.GameStatus statusToRead)
+    void ReadGameStatus(Game_State.GameStatus statusToRead)
     {
         if(statusToRead == Game_State.GameStatus.finished)
         {
             ShowPanelUI();
         }
     }
+
 
     private void OnEnable()
     {
