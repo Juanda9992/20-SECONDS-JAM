@@ -10,8 +10,7 @@ public class UIDisplayer : MonoBehaviour
     [SerializeField] private int maxItemsInScreen;
     [SerializeField]private GameObject objectPrefab;
 
-    [SerializeField] private Color explosionColor, fallColor, pushColor;
-
+    [SerializeField] private Color explosionColor, fallColor, pushColor;    
     public void InstantiateUIElement(DamageableObject objectToShow, int value)
     {
         GameObject currentObject = Instantiate(objectPrefab,Vector3.zero,Quaternion.identity);

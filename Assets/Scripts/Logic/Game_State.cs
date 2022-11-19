@@ -9,7 +9,7 @@ public class Game_State : MonoBehaviour
 
     public enum GameStatus{idle,playing,calculating,finished}
 
-    public GameStatus status = GameStatus.idle;
+    public GameStatus currentStatus = GameStatus.idle;
 
     public Action<GameStatus> onStatusChanged;
     // Start is called before the first frame update
@@ -28,10 +28,16 @@ public class Game_State : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(status == GameStatus.idle && Input.anyKeyDown)
+        if(currentStatus == GameStatus.idle && Input.anyKeyDown)
         {
-            status = GameStatus.playing;
-            onStatusChanged?.Invoke(status);
+            currentStatus = GameStatus.playing;
+            UpdateStatus(currentStatus);
         }
+    }
+
+    public void UpdateStatus(GameStatus status)
+    {
+        currentStatus= status;
+        onStatusChanged?.Invoke(status);
     }
 }

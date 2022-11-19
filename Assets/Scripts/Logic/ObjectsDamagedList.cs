@@ -12,7 +12,6 @@ public class ObjectsDamagedList : MonoBehaviour
     private void Start()
     {
         displayer = GameObject.FindObjectOfType<ListDisplayer>();
-        calculator = GameObject.FindObjectOfType<ScoreCalculator>();
     }
     public void AddObjectsToList(DamageableObject objectToAdd)
     {
@@ -22,6 +21,14 @@ public class ObjectsDamagedList : MonoBehaviour
     public void StartSendingObjects()
     {
         StartCoroutine("SendObjectsToDisplay");
+    }
+
+    private void ReadGameStatus(Game_State.GameStatus statusToRead)
+    {
+        if(statusToRead == Game_State.GameStatus.calculating)
+        {
+            StartSendingObjects();
+        }
     }
     private IEnumerator SendObjectsToDisplay()
     {
@@ -35,6 +42,16 @@ public class ObjectsDamagedList : MonoBehaviour
             yield return wait;
         }
         yield return new WaitForSeconds(1);
-        calculator.ShowScore();
+        Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.finished);
+    }
+
+    private void OnEnable()
+    {
+        Game_State.Game_State_Instance.onStatusChanged += ReadGameStatus;
+    }
+
+    private void OnDisable()
+    {
+        Game_State.Game_State_Instance.onStatusChanged -= ReadGameStatus;
     }
 }

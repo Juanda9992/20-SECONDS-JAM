@@ -5,9 +5,10 @@ using UnityEngine;
 public class ScoreCalculator : MonoBehaviour
 {
     private int currentScore = 0;
-    public void ShowScore()
+    public int GetScore()
     {
         Debug.Log("Your Score is: " + currentScore);
+        return currentScore;
     }
 
     public void AddScore(int scoreToAdd)
