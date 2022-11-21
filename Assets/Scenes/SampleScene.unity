@@ -1777,6 +1777,10 @@ PrefabInstance:
       propertyPath: nextPosition
       value: 
       objectReference: {fileID: 789343639}
+    - target: {fileID: 8050181953515875111, guid: eeb2d8ac86e24674b954ab7a4aa665fa, type: 3}
+      propertyPath: rotSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb2d8ac86e24674b954ab7a4aa665fa, type: 3}
 --- !u!1001 &7414328136570593059

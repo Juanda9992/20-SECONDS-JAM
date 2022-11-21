@@ -28,6 +28,7 @@ public class BombExplosion : MonoBehaviour
             }
         }
         damagedList.StartSendingObjects();
+        gameObject.SetActive(false);
     }
 
     private void ReadGameStatus(Game_State.GameStatus statusToRead)
