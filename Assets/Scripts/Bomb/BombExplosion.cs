@@ -16,9 +16,9 @@ public class BombExplosion : MonoBehaviour
     }
     private void Explode()
     {
-        Collider[] explosionColiders = Physics.OverlapSphere(transform.position,explosionRange,destructiblesLayer);
-
-        foreach(var destructible in explosionColiders)
+        Collider[] explosionColliders = Physics.OverlapSphere(transform.position,explosionRange,destructiblesLayer);
+        Debug.Log(explosionColliders);
+        foreach(var destructible in explosionColliders)
         {
             if(destructible.TryGetComponent<DamageableObject>(out DamageableObject damageObj))
             {
@@ -30,8 +30,23 @@ public class BombExplosion : MonoBehaviour
         damagedList.StartSendingObjects();
     }
 
+    private void ReadGameStatus(Game_State.GameStatus statusToRead)
+    {
+            
+        if(statusToRead == Game_State.GameStatus.calculating)
+        {
+            Explode();
+        }
+    }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.calculating);
+        }
+    }
     private void OnEnable()
     {
-        BombTimer.OnTimerOut += Explode;
+        Game_State.Game_State_Instance.onStatusChanged += ReadGameStatus;
     }
 }

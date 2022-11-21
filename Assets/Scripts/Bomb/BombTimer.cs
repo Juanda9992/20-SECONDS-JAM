@@ -28,10 +28,6 @@ public class BombTimer : MonoBehaviour
             hasExploded = true;
             OnTimerOut?.Invoke();
         }
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            OnTimerOut?.Invoke();
-        }
 
     }
 
