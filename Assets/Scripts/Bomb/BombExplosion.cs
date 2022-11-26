@@ -25,6 +25,10 @@ public class BombExplosion : MonoBehaviour
                 damageObj.damageType = DamageableObject.DamageType.explosion;
                 damagedList.AddObjectsToList(damageObj);
                 damageObj.rb.AddExplosionForce(explosionForce,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
+                if(destructible.TryGetComponent(out StaticObject staticObj))
+                {
+                    staticObj.Trigger();
+                }
             }
         }
         damagedList.StartSendingObjects();
