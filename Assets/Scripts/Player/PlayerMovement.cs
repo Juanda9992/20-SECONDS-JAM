@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Game_State.Game_State_Instance.currentStatus == Game_State.GameStatus.playing)
         {
-            rb.AddForce(transform.forward * zAxis * speed, ForceMode.Acceleration);
+            rb.velocity = transform.forward * zAxis * speed;
         }
     }
 }
