@@ -5,6 +5,7 @@ using UnityEngine;
 public class StaticObject : DamageableObject
 {
     public int triggerValue;
+    private bool hasTriggered = false;
 
     private void Start() 
     {
@@ -13,7 +14,16 @@ public class StaticObject : DamageableObject
     }
     public void Trigger()
     {
-        Debug.Log("Triggered");
+        hasTriggered = true;
+        Displayer.AddPenaltyScore(this);
         rb.isKinematic = false;
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            Trigger();
+        }    
     }
 }
