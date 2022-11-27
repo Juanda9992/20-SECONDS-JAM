@@ -26,7 +26,7 @@ public class BombTimer : MonoBehaviour
         if(currentTime <= 0 && !hasExploded)
         {
             hasExploded = true;
-            OnTimerOut?.Invoke();
+            Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.calculating);
         }
 
     }

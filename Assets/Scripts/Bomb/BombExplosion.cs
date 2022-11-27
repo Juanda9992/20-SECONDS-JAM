@@ -36,8 +36,7 @@ public class BombExplosion : MonoBehaviour
     }
 
     private void ReadGameStatus(Game_State.GameStatus statusToRead)
-    {
-            
+    {      
         if(statusToRead == Game_State.GameStatus.calculating)
         {
             Explode();

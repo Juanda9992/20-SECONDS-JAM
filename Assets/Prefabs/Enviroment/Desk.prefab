@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  Name: Desk
+  Name: Wooden Desk
   value: 100
   damageType: 0
 --- !u!1 &7366849433186352199
