@@ -20,18 +20,23 @@ public class ListDisplayer : MonoBehaviour
     public void AddPenaltyScore(DamageableObject objectToAdd)
     {
         FallableObject fallableObject = objectToAdd.GetComponent<FallableObject>();
-        if(fallableObject != null)
+        switch(objectToAdd.damageType)
         {
-            if(objectToAdd.damageType == DamageableObject.DamageType.fall)
-            {
+            case DamageableObject.DamageType.fall:
                 calculator.AddScore(fallableObject.fallValue);
                 onObjectReceived?.Invoke(objectToAdd,fallableObject.fallValue);
-            }
-            else if(objectToAdd.damageType == DamageableObject.DamageType.push)
-            {
+                break;
+            case DamageableObject.DamageType.push:
                 calculator.AddScore(fallableObject.pushValue);
-                onObjectReceived?.Invoke(objectToAdd, fallableObject.pushValue);
-            }
+                onObjectReceived?.Invoke(objectToAdd,fallableObject.pushValue);
+                break;
+            case DamageableObject.DamageType.collision:
+                StaticObject staticObject = objectToAdd.GetComponent<StaticObject>();
+                calculator.AddScore(staticObject.triggerValue);
+                onObjectReceived?.Invoke(objectToAdd, staticObject.triggerValue);
+                break;
+            default:
+                break;
         }
 
     }

@@ -10,7 +10,7 @@ public class UIDisplayer : MonoBehaviour
     [SerializeField] private int maxItemsInScreen;
     [SerializeField]private GameObject objectPrefab;
 
-    [SerializeField] private Color explosionColor, fallColor, pushColor;    
+    [SerializeField] private Color explosionColor, fallColor, pushColor,collisionColor;    
     public void InstantiateUIElement(DamageableObject objectToShow, int value)
     {
         GameObject currentObject = Instantiate(objectPrefab,Vector3.zero,Quaternion.identity);
@@ -35,6 +35,10 @@ public class UIDisplayer : MonoBehaviour
         else if(damage == DamageableObject.DamageType.push)
         {
             textToChange.color = pushColor;
+        }
+        else if(damage == DamageableObject.DamageType.collision)
+        {
+            textToChange.color = collisionColor;
         }
     }
 
