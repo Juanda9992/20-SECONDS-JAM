@@ -22,13 +22,13 @@ public class BombExplosion : MonoBehaviour
         {
             if(destructible.TryGetComponent<DamageableObject>(out DamageableObject damageObj))
             {
-                damageObj.damageType = DamageableObject.DamageType.explosion;
-                damagedList.AddObjectsToList(damageObj);
-                damageObj.rb.AddExplosionForce(explosionForce,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
                 if(destructible.TryGetComponent(out StaticObject staticObj))
                 {
                     staticObj.Trigger();
                 }
+                damageObj.damageType = DamageableObject.DamageType.explosion;
+                damagedList.AddObjectsToList(damageObj);
+                damageObj.rb.AddExplosionForce(explosionForce,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
             }
         }
         damagedList.StartSendingObjects();
