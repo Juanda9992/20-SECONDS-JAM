@@ -8,6 +8,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position,desiredPos.position,moveSpeed * Time.deltaTime);
+        if(Game_State.Game_State_Instance.currentStatus == Game_State.GameStatus.playing || Game_State.Game_State_Instance.currentStatus == Game_State.GameStatus.idle)
+        {
+            transform.position = Vector3.Lerp(transform.position,desiredPos.position,moveSpeed * Time.deltaTime);
+        }
     }
 }
