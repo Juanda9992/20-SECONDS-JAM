@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5594322595601849918
+--- !u!1 &3058358202623127579
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5109569545848898692}
-  - component: {fileID: 8162508222955342625}
-  - component: {fileID: 6243109153215463403}
-  - component: {fileID: 4711450288533623944}
-  - component: {fileID: 4711450288533623945}
-  - component: {fileID: 6491629222219239790}
+  - component: {fileID: 2394411111680092833}
+  - component: {fileID: 1627334027432142084}
+  - component: {fileID: 3562774898804740558}
+  - component: {fileID: 5864393008566329796}
+  - component: {fileID: 2262544420103940176}
+  - component: {fileID: 7305822000236584015}
   m_Layer: 6
-  m_Name: Lamp
+  m_Name: Pot Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5109569545848898692
+--- !u!4 &2394411111680092833
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -3.0996366, y: 0.35, z: -4.77}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_GameObject: {fileID: 3058358202623127579}
+  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.352818, y: 1.0500019, z: 7.689289}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8162508222955342625
+--- !u!33 &1627334027432142084
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
-  m_Mesh: {fileID: 2301266402714197019, guid: 594c05b276a48ea4e9fb7ec8fde9a883, type: 3}
---- !u!23 &6243109153215463403
+  m_GameObject: {fileID: 3058358202623127579}
+  m_Mesh: {fileID: -448274974820062540, guid: 092c82eb7e31b064a80c29b2a1d71577, type: 3}
+--- !u!23 &3562774898804740558
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
+  m_GameObject: {fileID: 3058358202623127579}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,8 +64,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e26a8519c5aa52f4aaffdbd640696885, type: 2}
-  - {fileID: 2100000, guid: bbea4cfb82ca69a44b2037e27f20a5e8, type: 2}
+  - {fileID: 2100000, guid: e0379c4c2f4278c41a7bcd6fb981d716, type: 2}
+  - {fileID: 2100000, guid: d4490e654615746459c99e8b10449340, type: 2}
+  - {fileID: 2100000, guid: 71ceb1751e589af46979d50673343b9e, type: 2}
+  - {fileID: 2100000, guid: 7d4730e00feb6614eab298b6747e0aed, type: 2}
+  - {fileID: 2100000, guid: 33b0142980a4ff848adb6dc0496b3748, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,52 +90,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4711450288533623944
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
-  serializedVersion: 2
-  m_Mass: 3
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &4711450288533623945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608f1a73b59ef1240b633166911e32e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  Name: Lamp
-  value: 200
-  damageType: 1
-  canTakeDamage: 0
-  fallValue: 30
-  pushValue: 10
-  minVelocity: 1
---- !u!65 &6491629222219239790
+--- !u!65 &5864393008566329796
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5594322595601849918}
+  m_GameObject: {fileID: 3058358202623127579}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.773368, y: 0.8131671, z: 2.9937828}
-  m_Center: {x: -0.000002577901, y: 0.0000012964009, z: 1.4968914}
+  m_Size: {x: 0.22858272, y: 0.3061226, z: 0.18984835}
+  m_Center: {x: -0.005014396, y: 0.06645434, z: -0.003131491}
+--- !u!54 &2262544420103940176
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058358202623127579}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7305822000236584015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058358202623127579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bca34cff8e1b604a869b78311f3fad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  Name: Plant
+  value: 300
+  damageType: 0
