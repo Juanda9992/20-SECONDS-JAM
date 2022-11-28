@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2409576843717478720
+--- !u!1 &2851437419814197488
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3043124877431788538}
-  - component: {fileID: 2131471901077724255}
-  - component: {fileID: 4210994497429317781}
-  - component: {fileID: 3292659706089066339}
-  - component: {fileID: 3292659706089066336}
-  - component: {fileID: 3292659706089066338}
+  - component: {fileID: 3231763283010142794}
+  - component: {fileID: 1978870241747750383}
+  - component: {fileID: 4364739323156216101}
+  - component: {fileID: 3121908133885953455}
+  - component: {fileID: 3121908133885953452}
+  - component: {fileID: 3121908133885953453}
   m_Layer: 6
-  m_Name: Clock
+  m_Name: Kitchen Stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3043124877431788538
+--- !u!4 &3231763283010142794
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.39, y: 3.74, z: -6.3}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_ConstrainProportionsScale: 0
+  m_GameObject: {fileID: 2851437419814197488}
+  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.962025, y: 0.30000657, z: 105.850075}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!33 &2131471901077724255
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1978870241747750383
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
-  m_Mesh: {fileID: -8227091162189397845, guid: 9937b2f08763a194c9cb570e6cd22b37, type: 3}
---- !u!23 &4210994497429317781
+  m_GameObject: {fileID: 2851437419814197488}
+  m_Mesh: {fileID: -3638994958435691078, guid: 293ef2762a471b84e9b2db70688ae1d4, type: 3}
+--- !u!23 &4364739323156216101
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
+  m_GameObject: {fileID: 2851437419814197488}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +64,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f63b41d3e01698440924930f6777dcf3, type: 2}
+  - {fileID: 2100000, guid: a67ab14f48090004ba273db270c18430, type: 2}
+  - {fileID: 2100000, guid: dbde8b9254682254dbea977e92919b7e, type: 2}
+  - {fileID: 2100000, guid: f1813d2475aea5844a58a53960f3ce6d, type: 2}
+  - {fileID: 2100000, guid: 9cf737b3faa57f94498995bc1901f516, type: 2}
+  - {fileID: 2100000, guid: a67402bffea86bb49887223fb93dafb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,15 +90,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3292659706089066339
+--- !u!54 &3121908133885953455
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
+  m_GameObject: {fileID: 2851437419814197488}
   serializedVersion: 2
-  m_Mass: 3
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -102,33 +106,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3292659706089066336
+--- !u!65 &3121908133885953452
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
+  m_GameObject: {fileID: 2851437419814197488}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.038433213, y: 0.27651423, z: 0.27651426}
-  m_Center: {x: -0.0017666055, y: 0.138255, z: 6.5811176e-12}
---- !u!114 &3292659706089066338
+  m_Size: {x: 0.43000007, y: 0.45000005, z: 0.45000005}
+  m_Center: {x: 0.21500003, y: 0.22500002, z: 0.22500002}
+--- !u!114 &3121908133885953453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409576843717478720}
+  m_GameObject: {fileID: 2851437419814197488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb1f80dd8f65a3418f652ae65589210, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bca34cff8e1b604a869b78311f3fad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  Name: Clock
-  value: 100
+  Name: Kitchen Stove
+  value: 250
   damageType: 0
-  triggerValue: 10
