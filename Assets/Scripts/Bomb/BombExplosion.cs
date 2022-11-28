@@ -9,15 +9,18 @@ public class BombExplosion : MonoBehaviour
     public float upwardsModifier;
     [SerializeField] private LayerMask destructiblesLayer;
     private ObjectsDamagedList damagedList;
+    private Rigidbody playerRb;
 
     private void Start()
     {
         damagedList = GameObject.FindObjectOfType<ObjectsDamagedList>();
+        playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
     private void Explode()
     {
         Collider[] explosionColliders = Physics.OverlapSphere(transform.position,explosionRange,destructiblesLayer);
         Debug.Log(explosionColliders);
+        ExplodePlayer();
         foreach(var destructible in explosionColliders)
         {
             if(destructible.TryGetComponent<DamageableObject>(out DamageableObject damageObj))
@@ -34,7 +37,12 @@ public class BombExplosion : MonoBehaviour
         damagedList.StartSendingObjects();
         gameObject.SetActive(false);
     }
-
+    private void ExplodePlayer()
+    {
+        playerRb.freezeRotation = false;
+        playerRb.AddExplosionForce(explosionForce * 1.5f,transform.position,explosionRange,upwardsModifier,ForceMode.VelocityChange);
+        playerRb.AddTorque(Random.insideUnitSphere * 38,ForceMode.VelocityChange);
+    }
     private void ReadGameStatus(Game_State.GameStatus statusToRead)
     {      
         if(statusToRead == Game_State.GameStatus.calculating)

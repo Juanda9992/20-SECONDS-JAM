@@ -7,9 +7,9 @@ public class Game_State : MonoBehaviour
 {
     public static Game_State Game_State_Instance;
 
-    public enum GameStatus{idle,playing,calculating,finished}
+    public enum GameStatus{menu,idle,playing,calculating,finished}
 
-    public GameStatus currentStatus = GameStatus.idle;
+    public GameStatus currentStatus = GameStatus.menu;
 
     public Action<GameStatus> onStatusChanged;
     // Start is called before the first frame update

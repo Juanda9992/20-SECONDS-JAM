@@ -12,6 +12,11 @@ public class DamageableObject : MonoBehaviour
     protected ListDisplayer Displayer;
     private void Awake()
     {
+        GetDependences();
+    }
+
+    public virtual void GetDependences()
+    {
         rb = GetComponent<Rigidbody>();
         Displayer = GameObject.FindObjectOfType<ListDisplayer>();
     }

@@ -12,10 +12,6 @@ public class SpawnerUI : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindObjectOfType<PlayerSpawner>();
-
-        infoText.text = "You are starting in the "  +spawner.currentPoint.spawnPointName;
-
-        Invoke("HideText",timeToHideText);
     }
 
     private void HideText()
@@ -23,4 +19,27 @@ public class SpawnerUI : MonoBehaviour
         infoText.gameObject.transform.parent.gameObject.SetActive(false);
     }
 
+    private void ShowText()
+    {
+        infoText.gameObject.transform.parent.gameObject.SetActive(true);
+        infoText.text = "You are starting in the "  +spawner.currentPoint.spawnPointName;
+        Invoke("HideText",timeToHideText);
+    }
+    private void ReadGameStatus(Game_State.GameStatus statusToRead)
+    {
+        if(statusToRead == Game_State.GameStatus.playing)
+        {
+            ShowText();
+        }
+    }
+
+    private void OnEnable()
+    {
+        Game_State.Game_State_Instance.onStatusChanged += ReadGameStatus;    
+    }
+
+    private void OnDisable() 
+    {
+        Game_State.Game_State_Instance.onStatusChanged -= ReadGameStatus;    
+    }
 }

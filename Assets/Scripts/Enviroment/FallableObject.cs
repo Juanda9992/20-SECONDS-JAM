@@ -9,12 +9,14 @@ public class FallableObject : DamageableObject
     [SerializeField] private float minVelocity;
     private bool damageTaken = false;
 
+
     private void Start() 
     {
         damageType = DamageType.fall;    
     }
     private void Update() 
     {
+        
         if(!damageTaken)
         {
             if(rb.angularVelocity.magnitude > minVelocity && !canTakeDamage)

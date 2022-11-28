@@ -12,14 +12,15 @@ public class StaticObject : DamageableObject
 
     private void Start() 
     {
+        GetDependences();
         thisCollider = GetComponent<Collider>();
-        rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
     public void Trigger()
     {
         if(!hasTriggered)
         {
+            Displayer = GameObject.FindObjectOfType<ListDisplayer>();
             hasTriggered = true;
             Displayer.AddPenaltyScore(this);
             rb.isKinematic = false;

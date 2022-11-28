@@ -55,4 +55,8 @@ public class UIDisplayer : MonoBehaviour
     {
         ListDisplayer.onObjectReceived += InstantiateUIElement; 
     }
+    private void OnDisable() 
+    {
+        ListDisplayer.onObjectReceived -= InstantiateUIElement; 
+    }
 }
