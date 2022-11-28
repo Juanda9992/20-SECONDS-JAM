@@ -6,9 +6,4 @@ public class SpawnPoint : MonoBehaviour
 {
     public Transform spawnTransform;
     public string spawnPointName;
-
-    private void Awake() 
-    {
-        spawnTransform = transform;    
-    }
 }

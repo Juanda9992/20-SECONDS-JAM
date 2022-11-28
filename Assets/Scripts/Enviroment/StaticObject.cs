@@ -23,7 +23,10 @@ public class StaticObject : DamageableObject
             hasTriggered = true;
             Displayer.AddPenaltyScore(this);
             rb.isKinematic = false;
-            Invoke("ResetCollision",timeBetweenCollisions);
+            if(playerCollider != null)
+            {
+                Invoke("ResetCollision",timeBetweenCollisions);
+            }
         }
     }
 

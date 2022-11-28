@@ -9,7 +9,7 @@ public class PlayerSpawner : MonoBehaviour
     private Transform currentTransform;
     
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         currentPoint = spawnPoints[Random.Range(0,spawnPoints.Count)];
         currentTransform = currentPoint.spawnTransform;

@@ -20,7 +20,7 @@ public class SpawnerUI : MonoBehaviour
 
     private void HideText()
     {
-        infoText.gameObject.SetActive(false);
+        infoText.gameObject.transform.parent.gameObject.SetActive(false);
     }
 
 }
