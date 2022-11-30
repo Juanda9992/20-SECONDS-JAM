@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticObject : DamageableObject
 {
     public int triggerValue;
-    private bool hasTriggered = false;
+    private bool hasTriggered = true;
     private float timeBetweenCollisions = 2f;
     private Collider thisCollider;
     private Collider playerCollider;
@@ -15,6 +15,7 @@ public class StaticObject : DamageableObject
         GetDependences();
         thisCollider = GetComponent<Collider>();
         rb.isKinematic = true;
+        Invoke("ResetCollision",1);
     }
     public void Trigger()
     {
@@ -24,17 +25,17 @@ public class StaticObject : DamageableObject
             hasTriggered = true;
             Displayer.AddPenaltyScore(this);
             rb.isKinematic = false;
-            if(playerCollider != null)
-            {
-                Invoke("ResetCollision",timeBetweenCollisions);
-            }
+            Invoke("ResetCollision",timeBetweenCollisions);
         }
     }
 
     private void ResetCollision()
     {
         hasTriggered = false;
-        Physics.IgnoreCollision(thisCollider,playerCollider,false);
+        if(playerCollider != null)
+        {
+            Physics.IgnoreCollision(thisCollider,playerCollider,false);
+        }
     }
     private void DisableCollision()
     {
@@ -43,7 +44,7 @@ public class StaticObject : DamageableObject
     }
     private void OnCollisionEnter(Collision other) 
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Destructibles") && !hasTriggered)
         {
             Trigger();
             playerCollider = other.collider;

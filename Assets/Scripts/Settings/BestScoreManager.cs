@@ -26,6 +26,10 @@ public class BestScoreManager : MonoBehaviour
             bestcore = scoreToRead;
             PlayerPrefs.SetInt("Best Score",scoreToRead);
         }
+        if(PlayerPrefs.GetInt("Best Score",0) <= 10)
+        {
+            PlayerPrefs.SetInt("Best Score",scoreToRead);
+        }
         UpdateText();
     }
 

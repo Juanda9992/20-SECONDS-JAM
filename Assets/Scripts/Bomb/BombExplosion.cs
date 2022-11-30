@@ -8,6 +8,7 @@ public class BombExplosion : MonoBehaviour
     public float explosionForce;
     public float upwardsModifier;
     [SerializeField] private LayerMask destructiblesLayer;
+    [SerializeField] private GameObject explosionParticle;
     private ObjectsDamagedList damagedList;
     private Rigidbody playerRb;
 
@@ -18,6 +19,7 @@ public class BombExplosion : MonoBehaviour
     }
     private void Explode()
     {
+        Instantiate(explosionParticle,transform.position,Quaternion.identity);
         Collider[] explosionColliders = Physics.OverlapSphere(transform.position,explosionRange,destructiblesLayer);
         Debug.Log(explosionColliders);
         ExplodePlayer();
@@ -48,13 +50,6 @@ public class BombExplosion : MonoBehaviour
         if(statusToRead == Game_State.GameStatus.calculating)
         {
             Explode();
-        }
-    }
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.calculating);
         }
     }
     private void OnEnable()

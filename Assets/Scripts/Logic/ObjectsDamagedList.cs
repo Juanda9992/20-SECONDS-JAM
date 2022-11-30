@@ -41,7 +41,7 @@ public class ObjectsDamagedList : MonoBehaviour
             damagedObjects.Dequeue();
             yield return wait;
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         Game_State.Game_State_Instance.UpdateStatus(Game_State.GameStatus.finished);
     }
 

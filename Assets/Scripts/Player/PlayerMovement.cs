@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof (Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    public bool isMoving;
     [SerializeField] private float speed = 15;
     private Rigidbody rb;
     private Vector3 nextMovement;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         zAxis = Input.GetAxis("Vertical");
+        isMoving = zAxis != 0;
     }
     private void FixedUpdate()
     {
