@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class ScoreCalculatorUI : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject containerObject;
+    [SerializeField] private Button firstSelected;
     private ScoreCalculator calculator;
     private void Start()
     {
@@ -17,6 +19,7 @@ public class ScoreCalculatorUI : MonoBehaviour
     {
         panel.SetActive(true);
         containerObject.SetActive(false);
+        firstSelected.Select();
         ShowScore();
     }
 
