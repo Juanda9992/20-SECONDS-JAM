@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Game_State : MonoBehaviour
 {
+    [SerializeField] private InputActionReference startAction;
     public static Game_State Game_State_Instance;
 
     public enum GameStatus{menu,idle,playing,calculating,finished}
@@ -29,7 +30,7 @@ public class Game_State : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(currentStatus == GameStatus.idle && Input.anyKeyDown)
+        if(currentStatus == GameStatus.idle && startAction.action.WasPerformedThisFrame())
         {
             currentStatus = GameStatus.playing;
             UpdateStatus(currentStatus);
