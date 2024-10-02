@@ -10,6 +10,7 @@ public class Game_State : MonoBehaviour
     public static Game_State Game_State_Instance;
 
     public enum GameStatus{menu,idle,playing,calculating,finished}
+    [SerializeField] private GameObject instruction;
 
     public GameStatus currentStatus = GameStatus.menu;
 
@@ -32,6 +33,7 @@ public class Game_State : MonoBehaviour
     {
         if(currentStatus == GameStatus.idle && startAction.action.WasPerformedThisFrame())
         {
+            instruction.SetActive(false);
             currentStatus = GameStatus.playing;
             UpdateStatus(currentStatus);
         }
